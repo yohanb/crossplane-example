@@ -1,0 +1,13 @@
+apiVersion: aws.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  assumeRole:
+    roleARN: "arn:aws:iam::445973224478:role/OrganizationAccountAccessRole"
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: aws-creds
+      key: creds
