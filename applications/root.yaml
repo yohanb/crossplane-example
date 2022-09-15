@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: crossplace-example
+  name: crossplane-example
   namespace: argocd
 spec:
   destination:
-    namespace: crossplace-example
+    namespace: crossplane-example
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deployments/terraform-cloud-agents/base
-    repoURL: git@github.com:turo/terraform-cloud-agents-deployments
+    path: applications
+    repoURL: https://github.com/yohanb/crossplane-example
     targetRevision: HEAD
